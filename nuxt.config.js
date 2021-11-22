@@ -25,7 +25,7 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: [{ path: '~/components', extensions: ['vue'] }],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -41,12 +41,27 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy: true
+  },
+
+  proxy: {
+    '/api': process.env.API_URL
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  env: {
+    API_URL: process.env.API_URL,
+    TWITCH_CLIENT_ID: process.env.TWITCH_CLIENT_ID || "Testing_client_ID",
+    TWITCH_REDIRECT_URI: process.env.TWITCH_REDIRECT_URI || "http://localhost:3000/callback",
+    TWITCH_SCOPE: process.env.TWITCH_SCOPE || "user_read",
+    TWITCH_CLIENT_SECRET: process.env.TWITCH_CLIENT_SECRET,
   }
 }

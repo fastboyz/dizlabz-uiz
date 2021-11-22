@@ -1,5 +1,7 @@
 <template>
-  <Tutorial/>
+  <div class="container">
+    <TwitchAuth />
+  </div>
 </template>
 
 <script lang="ts">
