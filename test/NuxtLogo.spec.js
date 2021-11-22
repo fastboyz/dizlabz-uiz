@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import NuxtLogo from '@/components/NuxtLogo.vue'
+import TwitchAuth from '@/components/TwitchAuth.vue'
 
-describe('NuxtLogo', () => {
+describe('TwitchAuth', () => {
   test('is a Vue instance', () => {
-    const wrapper = mount(NuxtLogo)
+    const wrapper = mount(TwitchAuth)
     expect(wrapper.vm).toBeTruthy()
   })
 })
