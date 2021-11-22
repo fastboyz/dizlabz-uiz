@@ -2,7 +2,7 @@
 <div class="twich-auth-div">
   <div class="button-div">
     <div class="button">
-      <a :href="this.twitchUrl">
+      <a :href="twitchUrl">
         <img src="~/static/twitch.svg" alt="twitch logo">
       </a>
     </div>
